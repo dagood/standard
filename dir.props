@@ -20,6 +20,9 @@
     <ToolsDir Condition="'$(ToolsDir)'==''">$(ProjectDir)Tools/</ToolsDir>
   </PropertyGroup>
 
+  <!-- Implement Repo API. Ideally moved to BuildTools, brought in by Build.Common.props. -->
+  <Import Project="$(ProjectDir)SourceBuild.RepoApi.props" />
+
   <!-- Import Build tools common props file where repo-independent properties are found -->
   <Import Project="$(ToolsDir)Build.Common.props" Condition="Exists('$(ToolsDir)Build.Common.props')" />
 
